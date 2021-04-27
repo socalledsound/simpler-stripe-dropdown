@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import AnimatedNavbar from './AnimatedNavbar'
+import styled from 'styled-components'
 
-function App() {
+
+const AppContainer = styled.div`
+background: #53f;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+
+> div:first-of-type {
+  flex: 1 0 70vh;
+}
+`;
+
+class App extends Component {
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <AnimatedNavbar />
+    </AppContainer>
   );
 }
+}
 
-export default App;
+export default App
